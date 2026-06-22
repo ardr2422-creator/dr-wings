@@ -78,6 +78,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  overflow-x: clip;        /* coupe tout débordement horizontal parasite (mobile) sans casser position:sticky */
   /* Lenis prend le relais si JS actif (voir main.js) */
 }
 html.lenis,
@@ -139,6 +140,7 @@ h1, h2, h3, h4 {
   color: var(--ink);
   text-wrap: balance;
   font-optical-sizing: auto;
+  overflow-wrap: break-word;   /* évite qu'un mot long déborde de l'écran */
 }
 
 .display {
@@ -782,6 +784,9 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translate(-50%, -50%) r
   display: flex;
   gap: 0.4rem;
   overflow-x: auto;
+  overflow-y: hidden;          /* pas de défilement vertical parasite */
+  touch-action: pan-x;         /* le geste vertical fait défiler la page, l'horizontal le menu */
+  overscroll-behavior-x: contain;
   padding: 0.5rem;
   margin-bottom: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
   background: rgba(250, 246, 239, 0.94);
@@ -1186,8 +1191,8 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translate(-50%, -50%) r
 }
 
 
-.carousel { position: relative; max-width: 1040px; margin-inline: auto; }
-.carousel__viewport { position: relative; height: clamp(320px, 46vw, 380px); perspective: 1600px; }
+.carousel { position: relative; max-width: 1040px; margin-inline: auto; overflow-x: clip; }
+.carousel__viewport { position: relative; height: clamp(320px, 46vw, 380px); perspective: 1600px; touch-action: pan-y; }
 .review-card {
   position: absolute;
   top: 0;
@@ -1322,14 +1327,24 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
 }
 
 @media (max-width: 640px) {
+  /* Réglages communs aux sliders horizontaux mobiles :
+     - overflow-y:hidden + touch-action:pan-x  → le geste vertical fait défiler la PAGE,
+       le geste horizontal fait défiler le slider (plus de scroll vertical parasite)
+     - overscroll-behavior-x:contain            → plus de rebond horizontal de toute la page
+     - scroll-snap-stop:always (sur les enfants) → un seul plat par swipe, jamais « plein »
+     - padding vertical                         → les arrondis et ombres ne sont plus coupés */
+
   /* Spécialités — page accueil */
   .specials {
     display: flex !important;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
-    padding-bottom: 0.75rem;
+    padding: 0.5rem 0.2rem 1.25rem;
     scrollbar-width: none;
     grid-template-columns: unset;
   }
@@ -1343,7 +1358,8 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
     width: min(78vw, 300px);
     grid-column: auto !important;
     min-height: 260px;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
   .special--lg { min-height: 340px; }
 
@@ -1351,10 +1367,13 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
   .dish-grid {
     display: flex !important;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
-    padding-bottom: 0.75rem;
+    padding: 0.5rem 0.2rem 1.25rem;
     scrollbar-width: none;
     grid-template-columns: unset;
   }
@@ -1362,17 +1381,21 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
   .dish-grid .dish {
     flex: none !important;
     width: min(72vw, 256px);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 
   /* Étapes « commander » — page accueil */
   .steps {
     display: flex !important;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
-    padding-bottom: 0.75rem;
+    padding: 0.5rem 0.2rem 1.25rem;
     scrollbar-width: none;
     grid-template-columns: unset;
   }
@@ -1380,8 +1403,23 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
   .step {
     flex: none !important;
     width: min(76vw, 280px);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
+
+  /* Les enfants d'un slider ne jouent PAS l'animation reveal :
+     sinon ils « disparaissent puis réapparaissent » d'un coup pendant le swipe. */
+  .specials .special.reveal,
+  .dish-grid .dish.reveal,
+  .steps .step.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  /* Reveal allégé sur mobile (sans flou GPU) → scroll plus fluide */
+  .reveal { filter: none; }
 }
 
 .badges-slider {
@@ -1393,10 +1431,13 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
   .badges-slider {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     gap: 1.2rem;
-    padding-bottom: 0.75rem;
+    padding: 0.5rem 0.2rem 1rem;
     scrollbar-width: none;
     grid-template-columns: unset;
   }
@@ -1404,7 +1445,14 @@ body.nav-open .nav-overlay__cta { opacity: 1; transform: none; }
   .badges-slider .card {
     flex: none;
     width: min(74vw, 270px);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  .badges-slider .card.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
 

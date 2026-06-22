@@ -69,6 +69,30 @@
     });
   });
 
+  /* Swipe tactile : un seul avis par geste, et seulement si le geste est
+     clairement horizontal (sinon on laisse la page défiler verticalement). */
+  var tStartX = null, tStartY = null, swiping = false;
+  carousel.addEventListener("touchstart", function (e) {
+    tStartX = e.touches[0].clientX;
+    tStartY = e.touches[0].clientY;
+    swiping = false;
+  }, { passive: true });
+  carousel.addEventListener("touchmove", function (e) {
+    if (tStartX === null) return;
+    var dx = e.touches[0].clientX - tStartX;
+    var dy = e.touches[0].clientY - tStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) swiping = true;
+  }, { passive: true });
+  carousel.addEventListener("touchend", function (e) {
+    if (tStartX === null) return;
+    var dx = e.changedTouches[0].clientX - tStartX;
+    var dy = e.changedTouches[0].clientY - tStartY;
+    if (swiping && Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next(); else prev();
+    }
+    tStartX = tStartY = null;
+  }, { passive: true });
+
   render();
   restart();
 })();

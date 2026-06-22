@@ -29,7 +29,7 @@
     card.innerHTML =
       '<div class="dish__img">' +
         '<div class="dish__placeholder">' + PLACEHOLDER_SVG + "</div>" +
-        '<img loading="lazy" alt="' + escapeHtml(item.nom) + ' — Kayani Kitchen" ' +
+        '<img loading="lazy" decoding="async" alt="' + escapeHtml(item.nom) + ' — Kayani Kitchen" ' +
           'src="' + imgPath(item.img) + '" ' +
           'onerror="this.style.display=\'none\'" />' +
       "</div>" +

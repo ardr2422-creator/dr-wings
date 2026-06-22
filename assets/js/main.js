@@ -138,16 +138,31 @@
     });
   });
 
-  if (!prefersReduced) {
+  /* Parallaxe désactivée sur mobile/tactile : un transform recalculé à chaque scroll
+     sur une grande image saccade les petits téléphones. On garde le léger zoom CSS. */
+  var allowParallax = !prefersReduced &&
+    window.matchMedia("(min-width: 861px) and (pointer: fine)").matches;
+  if (allowParallax) {
     var parallaxEls = document.querySelectorAll("[data-parallax]");
     if (parallaxEls.length) {
+      var ticking = false;
       window.addEventListener("scroll", function () {
-        var y = window.scrollY;
-        parallaxEls.forEach(function (el) {
-          var speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
-          el.style.transform = "translate3d(0," + (y * speed).toFixed(1) + "px,0) scale(1.08)";
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          parallaxEls.forEach(function (el) {
+            var speed = parseFloat(el.getAttribute("data-parallax")) || 0.15;
+            el.style.transform = "translate3d(0," + (y * speed).toFixed(1) + "px,0) scale(1.08)";
+          });
+          ticking = false;
         });
       }, { passive: true });
     }
   }
+
+  /* Fluidité : décodage asynchrone de toutes les images (évite les à-coups au scroll) */
+  document.querySelectorAll("img:not([decoding])").forEach(function (img) {
+    img.decoding = "async";
+  });
 })();
