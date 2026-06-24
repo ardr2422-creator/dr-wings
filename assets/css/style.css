@@ -780,7 +780,7 @@ body.nav-open .nav-toggle span:nth-child(3) { transform: translate(-50%, -50%) r
 
 .menu-nav {
   position: sticky;
-  top: clamp(5.5rem, 4.5rem + 3vw, 7.5rem);
+  top: clamp(7rem, 6.8rem + 2.05vw, 9.5rem);
   z-index: 40;
   display: flex;
   justify-content: safe center;
