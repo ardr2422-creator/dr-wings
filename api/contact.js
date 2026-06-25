@@ -2,8 +2,8 @@
 
 const https = require("https");
 
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "contact@dr-wings.com";
-const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Dr Wings <contact@dr-wings.com>";
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "contact@cestmondessert.fr";
+const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "C'est Mon Dessert <contact@cestmondessert.fr>";
 
 function sendJson(res, status, payload) {
   res.writeHead(status, {
@@ -49,9 +49,9 @@ function sendContactEmail(payload, callback) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return callback(new Error("mail_not_configured"));
 
-  const subject = "[Site Dr Wings] " + payload.sujet + " - " + payload.nom;
+  const subject = "[Site C'est Mon Dessert] " + payload.sujet + " - " + payload.nom;
   const text = [
-    "Nouvelle demande depuis le site Dr Wings",
+    "Nouvelle demande depuis le site C'est Mon Dessert",
     "",
     "Sujet : " + payload.sujet,
     "Nom : " + payload.nom,
@@ -61,7 +61,7 @@ function sendContactEmail(payload, callback) {
     payload.message
   ].filter(Boolean).join("\n");
   const html = [
-    "<h2>Nouvelle demande depuis le site Dr Wings</h2>",
+    "<h2>Nouvelle demande depuis le site C'est Mon Dessert</h2>",
     "<p><strong>Sujet :</strong> " + escapeHtml(payload.sujet) + "</p>",
     "<p><strong>Nom :</strong> " + escapeHtml(payload.nom) + "</p>",
     "<p><strong>Email :</strong> " + escapeHtml(payload.email) + "</p>",
@@ -86,7 +86,7 @@ function sendContactEmail(payload, callback) {
     headers: {
       "Authorization": "Bearer " + apiKey,
       "Content-Type": "application/json",
-      "User-Agent": "dr-wings-site/1.0",
+      "User-Agent": "cest-mon-dessert-site/1.0",
       "Content-Length": Buffer.byteLength(body)
     }
   }, function (apiRes) {

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /panier
 
-Sitemap: https://dr-wings.com/sitemap.xml
+Sitemap: https://cestmondessert.fr/sitemap.xml

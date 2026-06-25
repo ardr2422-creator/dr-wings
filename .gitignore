@@ -5,3 +5,10 @@ dish-images*.json
 .claude/
 .agents/
 CLAUDE.md
+
+# Outillage agent / artefacts (hors site)
+skills/
+no slop/
+skills-lock.json
+desktop.ini
+**/desktop.ini

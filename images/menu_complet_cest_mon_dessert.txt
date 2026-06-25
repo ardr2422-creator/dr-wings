@@ -1,0 +1,68 @@
+=============================================================
+    MENU COMPLET C'EST MON DESSERT
+    (Sources: tous les etablissements du reseau IDF)
+=============================================================
+
+[CATEGORIE 1] COFFRETS GOURMANDS
+-------------------------------------------------------------
+  1. COFFRET ALLEZ LES BLEUS ! - 29,90 EUR
+     (2 tiramisus + 1 box au choix : donuts ou beignets)
+
+[CATEGORIE 2] TIRAMISUS BOWLS
+-------------------------------------------------------------
+  1. TIRAMISU BUENO WHITE        - 8,90 EUR
+     (Creme Bueno, eclats de bueno white)
+  2. TIRAMISU CHOCOBON NUTELLA   - 8,90 EUR
+     (Nutella, eclats de chocobon, cookies croquants)
+  3. TIRAMISU SPECULOOS NUTELLA  - 8,90 EUR
+     (Nutella fondant, eclats de speculoos croquants)
+  4. TIRAMISU KINDER COUNTRY     - 8,90 EUR
+     (Nutella fondant, eclats de kinder country croquants)
+  5. TIRAMISU SPECULOOS CARAMEL  - 8,90 EUR
+     (Speculoos croquant, caramel fondant)
+  6. TIRAMISU BUENO BUENO        - 12,90 EUR
+     (Creme Bueno, copeaux de Kinder Bueno)
+
+[CATEGORIE 3] BOX DONUTS
+-------------------------------------------------------------
+  1. BOX KINDER CREAM            - 14,90 EUR / 15,90 EUR
+     4 donuts : Kinder Country Nutella, Nutella White,
+     Kinder Maxi White, Bueno White
+  2. BOX AMERICAN CREAM          - 14,90 EUR / 15,90 EUR
+     4 donuts : Speculoos Nutella, Brownie White,
+     Snickers Nutella, Oreo White
+
+[CATEGORIE 4] BOX BEIGNETS XL FOURRES
+-------------------------------------------------------------
+  1. KINDER MAXI DUO             - 12,90 EUR
+     2 beignets : Kinder Maxi fourre au Nutella +
+     Kinder Maxi White fourre a la fraise
+  2. BOX XL NUTELLA WHITE        - 15,90 EUR
+     4 beignets fourres au Nutella : speculoos, chocobon blanc,
+     caramel, bueno white, napolitain chocolat blanc
+
+[CATEGORIE 5] BOISSONS & BUBBLE TEA
+-------------------------------------------------------------
+  1. BUBBLE TEA FRAISE PECHE     - 5,90 EUR
+     (Bubble tea saveur peche et fraise, perles gourmandes)
+  2. BUBBLE TEA MANGUE PASSION   - 5,90 EUR
+     (Bubble tea saveur mangue et passion)
+  3. RED VELVET - FRUITS ROUGES  - 5,90 EUR / 6,90 EUR
+     (Sirop fraise et grenadine)
+  4. DO BRAZIL - CURACAO PASSION - 5,90 EUR / 6,90 EUR
+     (Sirop Blue Curacao et passion, melange exotique)
+
+=============================================================
+Nombre total de plats : 15 (hors offres promotionnelles)
+Nombre de categories  : 5
+
+NOTES:
+- Le 95 (Argenteuil) propose uniquement 2 categories:
+  TIRAMISUS BOWLS + BOISSONS & BUBBLE TEA
+- Les categories BOX DONUTS et BOX BEIGNETS sont disponibles
+  dans les autres etablissements du reseau
+- Prix variables selon les etablissements
+=============================================================
+Fichier genere depuis les pages Uber Eats du reseau
+C'est Mon Dessert (IDF) - 24/06/2026
+=============================================================

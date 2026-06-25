@@ -1,34 +1,42 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patient introuvable (404) · Dr Wings</title>
+  <title>Page introuvable · C'est Mon Dessert</title>
+  <meta name="description" content="Cette page a fondu. Retournez à la carte pour composer votre moment sucré." />
   <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#ffe3df" />
-  <link rel="icon" type="image/png" href="images/logo-dr-wings.png" />
-  <link rel="apple-touch-icon" href="images/logo-dr-wings.png" />
+  <meta name="theme-color" content="#ffd9de" />
+
+  <link rel="icon" type="image/png" href="images/illustration/logo.png" />
+  <link rel="apple-touch-icon" href="images/illustration/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Caveat:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="assets/css/style.css" />
-  <noscript><style>.reveal,.reveal-img{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}</style></noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
   <header>
     <nav class="site-nav" aria-label="Navigation principale">
-      <a class="nav-logo" href="index.html" aria-label="Dr Wings, accueil">
-        <img src="images/logo-dr-wings.png" alt="Dr Wings" width="160" height="64" />
+      <a class="nav-logo" href="index.html" aria-label="C'est Mon Dessert, accueil">
+        <img src="images/illustration/logo.png" alt="C'est Mon Dessert" width="120" height="120" />
       </a>
       <div class="nav-links">
         <a class="nav-link" href="index.html">Accueil</a>
         <a class="nav-link" href="menu.html">La carte</a>
-        <a class="nav-link" href="notre-histoire.html">La clinique</a>
+        <a class="nav-link" href="notre-histoire.html">Notre histoire</a>
         <a class="nav-link" href="nous-trouver.html">Nous trouver</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <a class="btn btn--gold" href="menu.html"><span>Voir la carte</span></a>
+        <a class="btn btn--gold" href="menu.html">
+          <span>Commander</span>
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+        </a>
       </div>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-overlay">
         <span></span><span></span><span></span>
@@ -44,32 +52,51 @@
       <nav class="nav-overlay__links" aria-label="Navigation mobile">
         <a href="index.html">Accueil</a>
         <a href="menu.html">La carte</a>
-        <a href="notre-histoire.html">La clinique</a>
+        <a href="notre-histoire.html">Notre histoire</a>
         <a href="nous-trouver.html">Nous trouver</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="nav-overlay__meta">
+        <a href="https://www.instagram.com/cestmondessertofficiel/" target="_blank" rel="noopener">Instagram @cestmondessertofficiel</a>
+        <span>Votre moment sucré, livré en Île-de-France</span>
+      </div>
     </div>
   </div>
 
   <main id="main">
-    <section class="tile" style="min-height:100svh;display:flex;align-items:center;padding-top:7rem;padding-bottom:3rem">
+    <section class="section section--dark tile-dark" style="min-height:88vh;display:flex;align-items:center">
       <div class="container text-center">
-        <img src="images/logo-dr-wings.png" alt="" aria-hidden="true" style="width:clamp(5rem,8vw,7.5rem);height:auto;margin:0 auto 1.5rem" />
-        <p class="eyebrow eyebrow--center">Erreur 404 · Patient introuvable</p>
-        <h1 style="font-size:var(--step-5);color:var(--ink);margin-top:0.6rem">Cette page est sortie<br />sans laisser <em style="font-family:var(--font-marker);font-style:normal;color:var(--gold);font-size:1.12em">d'ordonnance.</em></h1>
-        <p class="lead measure" style="margin:1.3rem auto 0;color:var(--ink-soft)">Le dossier que vous cherchez n'existe pas, ou il a été classé ailleurs. Pas de panique. Le seul vrai symptôme ici, c'est la faim. On sait la soigner.</p>
+        <p class="display" style="color:var(--gold-soft);font-size:clamp(4rem,2rem+12vw,9rem);line-height:0.9">404</p>
+        <h1 style="margin-top:0.6rem">Cette page a <em style="color:var(--gold-soft)">fondu.</em></h1>
+        <p class="lead measure" style="margin:1.2rem auto 0;text-align:center;color:var(--on-dark-soft)">Le lien n'existe pas, ou plus. Pas grave : la carte, elle, est toujours servie.</p>
         <div class="btn-row" style="justify-content:center;margin-top:2rem">
-          <a class="btn btn--gold" href="https://www.ubereats.com/fr/store/dr-wings-franconville/v0p42CWaU-2kR9s5SoUDvw" target="_blank" rel="noopener">
-            <span>Commander des wings</span>
+          <a class="btn btn--gold" href="menu.html">
+            <span>Voir la carte</span>
             <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
           </a>
-          <a class="btn btn--ghost" href="index.html"><span>Retour à l'accueil</span></a>
+          <a class="btn btn--ghost-light" href="index.html">
+            <span>Retour à l'accueil</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;margin-top:0">
+        <p>© <span data-year>2026</span> C'est Mon Dessert. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

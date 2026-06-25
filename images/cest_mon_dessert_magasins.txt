@@ -1,0 +1,67 @@
+=======================================================
+          C'EST MON DESSERT - INFORMATIONS MAGASINS
+=======================================================
+
+--- 1. C'est Mon Dessert ---
+Ville      : Saint-Denis
+Adresse    : 11 Rue Gabriel Péri, Saint-Denis, 93200
+Horaires   : Tous les jours : 20:15 - 4:30
+Note       : 4.1 (350+ notes)
+
+--- 2. C'est Mon Dessert 91 ---
+Ville      : Évry-Courcouronnes
+Adresse    : 10 Cours Monseigneur Romero, Évry-Courcouronnes, 91000
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 4.7 (130+ notes)
+
+--- 3. C'est Mon Dessert 91.1 ---
+Ville      : Massy
+Adresse    : 1 Place De France, Massy, 91300
+Horaires   : Tous les jours : 20:30 - 4:15
+Note       : 4.3 (73 notes)
+
+--- 4. C'est Mon Dessert 92 ---
+Ville      : Courbevoie
+Adresse    : 12 Rue De Rouen, Courbevoie, 92400
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 3.8 (360+ notes)
+
+--- 5. C'est Mon Dessert 93 ---
+Ville      : Bondy
+Adresse    : 43 Rue Jules Guesde, Bondy, 93140
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 3.9 (notes non spécifiées)
+
+--- 6. C'est Mon Dessert 94 ---
+Ville      : Saint-Maur-Des-Fossés
+Adresse    : 50 Avenue De Bonneuil, Saint-Maur-Des-Fossés, 94210
+Horaires   : Tous les jours : 20:30 - 16:30
+Note       : 4.2 (170+ notes)
+
+--- 7. C'est Mon Dessert 95 ---
+Ville      : Argenteuil
+Adresse    : 82 Avenue Gabriel Péri, Argenteuil, 95100
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 4.0 (130+ notes)
+
+--- 8. C'est Mon Dessert 95.1 ---
+Ville      : Montmagny
+Adresse    : Place De La Division Leclerc, Montmagny, 95360
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 4.0 (110+ notes)
+
+--- 9. C'est Mon Dessert 15 ---
+Ville      : Paris
+Adresse    : 4 Rue Desaix, Paris, 75015
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 4.0 (220+ notes)
+
+--- 10. C'est Mon Dessert 77 ---
+Ville      : Chessy
+Adresse    : 45 Rue D'Ariane, Chessy, 77700
+Horaires   : Tous les jours : 20:30 - 4:30
+Note       : 4.3 (220+ notes)
+
+=======================================================
+Fichier généré le : 24/06/2026 23:16:10
+=======================================================

@@ -1,93 +1,35 @@
-# Dr Wings — Site vitrine
+# C'est Mon Dessert
 
-Site vitrine premium pour **Dr Wings**, la « clinique du poulet » à **Franconville (95)**.
-Spécialité : chicken wings, tenders, sauces signatures. **Livraison uniquement** via Uber Eats.
-
-Direction artistique : carrelage clinique blanc + blush, barquettes kraft, encre brune, mascotte
-poulet-à-lunettes. Ton « médecin fou de wings » — ordonnances, posologie, prescriptions.
-
----
+Site e-commerce de livraison de desserts (tiramisus, donuts, beignets XL, bubble tea, coffrets) en Île-de-France. Préparé le soir, livré tard, jusqu'à 4h30.
 
 ## Stack
 
-Site **statique** (HTML/CSS/JS vanilla), zéro build, pensé pour la performance et un déploiement
-Vercel instantané. Pas de framework : contrôle total du design, LCP minimal, aucune dépendance front
-à installer.
+Site statique multi-pages (HTML / CSS / JS vanilla), hébergé sur Vercel (`framework: null`), avec fonctions serverless pour la commande et le contact. Panier en `localStorage`. Aucun runtime de framework, pensé pour la performance mobile.
 
-- **Animations on-scroll** : IntersectionObserver (reveals) + [Lenis](https://github.com/darkroomengineering/lenis) (smooth scroll), via CDN.
-- **Typographie** : Bricolage Grotesque (display) · Caveat (manuscrit « ordonnance ») · Hanken Grotesk (texte) · mono système (données cliniques).
-- **Formulaire de contact** : fonction serverless `api/contact.js` (Resend) + repli Instagram.
+## Lancer en local
 
-### Palette de marque
+```bash
+npm install
+npm run dev        # http://localhost:3000  (ou PORT=2000 npm run dev)
+```
 
-| Rôle | Couleur |
-|------|---------|
-| Brun espresso (encre, texte, fonds sombres) | `#5C3A2E` |
-| Blush (sections alternées) | `#FFE3DF` |
-| Blush soutenu (accents, puces) | `#FCCCC8` |
-| Blanc (canevas) | `#FFFFFF` |
-| Terracotta « épice » (accent fonctionnel) | dérivée — `#D2603F` |
-
-Tout est piloté par des CSS custom properties dans `assets/css/style.css` (`:root`).
-
----
+Le serveur statique (`server.js`) sert aussi `/api/order` et `/api/contact` en local.
 
 ## Structure
 
-```
-index.html               Accueil (hero clinique, ordonnances signature, protocole)
-menu.html                La carte (« l'ordonnance », filtres + posologie)
-notre-histoire.html      La clinique (concept, méthode, serment)
-nous-trouver.html        Franconville + zone de livraison
-contact.html             Formulaire + FAQ
-404.html                 Page « patient introuvable »
-mentions-legales.html    /  politique-confidentialite.html
-assets/css/style.css     Design system + composants
-assets/js/main.js        Nav, reveals, smooth scroll, marquee, FAQ
-assets/js/menu-data.js   Données du menu (source : Uber Eats Franconville)
-assets/js/menu.js        Rendu de la carte + filtres + scrollspy
-api/contact.js           Fonction serverless (envoi via Resend)
-images/                  Logo, illustrations, visuels
-```
+- `index.html`, `menu.html`, `panier.html`, `notre-histoire.html`, `nous-trouver.html`, `contact.html`, `404.html`, pages légales
+- `assets/css/style.css` — design system (tokens, composants)
+- `assets/js/` — `products.js` (catalogue, source unique), `cart.js` (panier + drawer), `menu.js` (carte), `checkout.js`, `locator.js` + `locations-data.js`, `reviews.js`, `main.js`
+- `api/order.js`, `api/contact.js` — fonctions serverless (Resend)
+- `images/` — logo, illustrations, photos produits
 
----
+## Configuration à compléter
 
-## Développement
+1. **Numéro WhatsApp** : `CMD_CONFIG.whatsapp` dans `assets/js/products.js` (placeholder actuel).
+2. **Emails** : variables Vercel `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL` (voir `.env.example`). Sans elles, la commande reste valide via WhatsApp et l'email est désactivé proprement.
+3. **Domaine** : remplacer `cestmondessert.fr` dans les balises `canonical` / `og:` et `sitemap.xml`.
+4. **Mentions légales** : compléter la raison sociale et les coordonnées du responsable de traitement.
 
-```bash
-npm install        # @vercel/analytics uniquement (optionnel)
-npm run dev        # serveur local sur http://localhost:3000 (sert le statique + /api/contact)
-```
+## Sécurité
 
-> Le serveur de dev (`server.js`) est local uniquement. En production, Vercel sert les fichiers
-> statiques et exécute `api/contact.js` comme fonction serverless.
-
----
-
-## Déploiement (Vercel)
-
-1. Connecter le dépôt à Vercel (framework : *Other*, output : racine — déjà dans `vercel.json`).
-2. Définir les variables d'environnement (onglet *Settings → Environment Variables*) :
-   - `RESEND_API_KEY` — clé API [Resend](https://resend.com) (sinon le formulaire renvoie « non configuré » proprement).
-   - `CONTACT_TO_EMAIL` — adresse de réception.
-   - `CONTACT_FROM_EMAIL` — expéditeur vérifié sur Resend.
-3. `vercel.json` configure : `cleanUrls`, en-têtes de sécurité (CSP, HSTS, X-Frame-Options…), cache des assets.
-4. `.vercelignore` exclut du déploiement les résidus et notes internes.
-
----
-
-## À compléter par l'exploitant
-
-Ces éléments nécessitent des informations réelles que le site signale sans les inventer :
-
-- **Mentions légales** : raison sociale, SIRET, directeur de publication (`mentions-legales.html`).
-- **Email de contact** : configurer `CONTACT_TO_EMAIL` / `RESEND_API_KEY`.
-- **Horaires** : affichés en temps réel via Uber Eats (pas de tableau figé).
-- **Prix / disponibilité** : la source de vérité reste la fiche Uber Eats.
-
----
-
-## Liens
-
-- Commander : [Uber Eats — Dr Wings Franconville](https://www.ubereats.com/fr/store/dr-wings-franconville/v0p42CWaU-2kR9s5SoUDvw)
-- Instagram : [@doctor.wings](https://www.instagram.com/doctor.wings/)
+Validation client et serveur sur les formulaires, recalcul du total de commande côté serveur, échappement systématique, en-têtes durcis (CSP, HSTS, X-Frame-Options) dans `vercel.json`, aucun secret en dur.

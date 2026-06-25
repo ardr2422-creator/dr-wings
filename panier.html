@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon panier · C'est Mon Dessert | Commander en Île-de-France</title>
+  <meta name="description" content="Vérifiez votre panier et finalisez votre commande C'est Mon Dessert. Livraison en Île-de-France, confirmation par WhatsApp." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://cestmondessert.fr/panier" />
+  <meta name="theme-color" content="#ffd9de" />
+
+  <link rel="icon" type="image/png" href="images/illustration/logo.png" />
+  <link rel="apple-touch-icon" href="images/illustration/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <noscript><style>.reveal,.reveal-img{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a class="nav-logo" href="index.html" aria-label="C'est Mon Dessert, accueil">
+        <img src="images/illustration/logo.png" alt="C'est Mon Dessert" width="120" height="120" />
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="menu.html">La carte</a>
+        <a class="nav-link" href="notre-histoire.html">Notre histoire</a>
+        <a class="nav-link" href="nous-trouver.html">Nous trouver</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn--gold" href="menu.html">
+          <span>La carte</span>
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay">
+    <button class="nav-overlay__close" aria-label="Fermer le menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div class="container">
+      <nav class="nav-overlay__links" aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="menu.html">La carte</a>
+        <a href="notre-histoire.html">Notre histoire</a>
+        <a href="nous-trouver.html">Nous trouver</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-overlay__meta">
+        <a href="https://www.instagram.com/cestmondessertofficiel/" target="_blank" rel="noopener">Instagram @cestmondessertofficiel</a>
+        <span>Votre moment sucré, livré en Île-de-France</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a><span aria-hidden="true">/</span><a href="menu.html">La carte</a><span aria-hidden="true">/</span><span>Mon panier</span>
+        </nav>
+        <h1>Votre <em>moment sucré</em></h1>
+        <p class="lead measure">Vérifiez le panier, indiquez où vous êtes, choisissez un créneau. On confirme tout par WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:clamp(2rem,1rem+3vw,3.5rem)">
+      <div class="container">
+
+        <!-- Panier vide -->
+        <div id="checkout-empty" class="checkout-empty" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <h2 class="h3">Votre panier est vide</h2>
+          <p class="lead measure" style="margin:0.6rem auto 1.6rem">Un tiramisu crémeux, une box de donuts, un bubble tea&nbsp;? Tout commence sur la carte.</p>
+          <div class="btn-row" style="justify-content:center">
+            <a class="btn btn--gold" href="menu.html"><span>Voir la carte</span>
+              <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Panier rempli : récap + checkout -->
+        <div id="checkout-filled" class="checkout" hidden>
+          <div class="checkout__main">
+            <form id="order-form" class="form" novalidate aria-label="Formulaire de commande">
+              <div>
+                <h2 class="h3" style="margin-bottom:0.3rem">Vos coordonnées</h2>
+              </div>
+              <div class="field" data-field="nom">
+                <label for="f-nom">Nom complet</label>
+                <input id="f-nom" name="nom" type="text" autocomplete="name" required maxlength="120" placeholder="Camille Durand" />
+                <span class="field__error" role="alert">Indiquez votre nom.</span>
+              </div>
+              <div class="grid" style="grid-template-columns:1fr 1fr;gap:1.4rem">
+                <div class="field" data-field="tel">
+                  <label for="f-tel">Téléphone</label>
+                  <input id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40" placeholder="06 12 34 56 78" />
+                  <span class="field__error" role="alert">Numéro français invalide.</span>
+                </div>
+                <div class="field" data-field="email">
+                  <label for="f-email">Email <span class="hint">(facultatif)</span></label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" maxlength="180" placeholder="camille@email.fr" />
+                  <span class="field__error" role="alert">Email invalide.</span>
+                </div>
+              </div>
+
+              <h2 class="h3" style="margin:1.4rem 0 0.3rem">Livraison</h2>
+              <div class="field" data-field="adresse">
+                <label for="f-adresse">Adresse de livraison</label>
+                <input id="f-adresse" name="adresse" type="text" autocomplete="street-address" required maxlength="200" placeholder="12 rue des Lilas, bâtiment B, 3e étage" />
+                <span class="field__error" role="alert">Indiquez votre adresse complète.</span>
+              </div>
+              <div class="grid" style="grid-template-columns:1fr 1.6fr;gap:1.4rem">
+                <div class="field" data-field="codePostal">
+                  <label for="f-cp">Code postal</label>
+                  <input id="f-cp" name="codePostal" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="10" placeholder="75015" />
+                  <span class="field__error" role="alert">Île-de-France uniquement.</span>
+                </div>
+                <div class="field" data-field="ville">
+                  <label for="f-ville">Ville</label>
+                  <input id="f-ville" name="ville" type="text" autocomplete="address-level2" required maxlength="120" placeholder="Paris" />
+                  <span class="field__error" role="alert">Indiquez votre ville.</span>
+                </div>
+              </div>
+              <div class="field" data-field="creneau">
+                <label for="f-creneau">Créneau souhaité</label>
+                <select id="f-creneau" name="creneau" required>
+                  <option value="" selected disabled>Choisir un créneau</option>
+                  <option value="Dès que possible">Dès que possible</option>
+                  <option value="Dans l'heure">Dans l'heure</option>
+                  <option value="Ce soir (20h30 – 23h)">Ce soir (20h30 – 23h)</option>
+                  <option value="Tard (23h – 2h)">Tard (23h – 2h)</option>
+                  <option value="Très tard (2h – 4h30)">Très tard (2h – 4h30)</option>
+                </select>
+                <span class="field__error" role="alert">Choisissez un créneau.</span>
+              </div>
+              <div class="field" data-field="note">
+                <label for="f-note">Note pour la maison <span class="hint">(facultatif)</span></label>
+                <textarea id="f-note" name="note" maxlength="600" placeholder="Code d'entrée, allergies, choix du coffret…"></textarea>
+              </div>
+
+              <div id="order-feedback" class="form__success" role="status" aria-live="polite" hidden></div>
+
+              <button class="btn btn--gold" type="submit" style="width:100%;justify-content:center;padding-block:1.05rem">
+                <span>Envoyer ma commande</span>
+                <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+              </button>
+              <p class="menu-note text-center">Validation et créneau confirmés par WhatsApp. Aucun paiement en ligne&nbsp;: vous réglez à la livraison.</p>
+            </form>
+          </div>
+
+          <aside class="checkout__aside">
+            <div class="order-summary">
+              <h3>Votre commande <span class="menu-note" id="summary-count" style="font-weight:500"></span></h3>
+              <div id="summary-lines"></div>
+              <div class="summary-total">
+                <span>Total</span>
+                <strong id="summary-total">0,00 €</strong>
+              </div>
+              <p class="menu-note" style="margin-top:0.9rem">Hors frais de livraison éventuels, calculés selon le magasin le plus proche.</p>
+              <div class="btn-row" style="margin-top:1.1rem">
+                <a class="link-quiet" href="menu.html">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1rem;height:1rem"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+                  Modifier la carte
+                </a>
+              </div>
+            </div>
+            <p class="menu-note text-center" style="margin-top:1rem">Vous préférez Uber Eats&nbsp;?
+              <a class="link-quiet" href="https://www.ubereats.com/fr/store/cest-mon-dessert/oUGzjJaMVGSAT-oWrFMP5w" target="_blank" rel="noopener" style="display:inline-flex">Commander là-bas</a>
+            </p>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/illustration/logo.png" alt="C'est Mon Dessert" />
+          <p>Tiramisus, donuts, beignets XL et bubble tea, préparés le soir et livrés chez vous partout en Île-de-France. Votre moment sucré.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cestmondessertofficiel/" target="_blank" rel="noopener" aria-label="Instagram @cestmondessertofficiel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>La maison</h5>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="menu.html">La carte</a></li>
+            <li><a href="notre-histoire.html">Notre histoire</a></li>
+            <li><a href="nous-trouver.html">Nous trouver</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Commander</h5>
+          <ul>
+            <li><a href="menu.html">Voir la carte</a></li>
+            <li><a href="panier.html">Mon panier</a></li>
+            <li><a href="nous-trouver.html">Zone de livraison</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Suivre</h5>
+          <ul>
+            <li><a href="https://www.instagram.com/cestmondessertofficiel/" target="_blank" rel="noopener">@cestmondessertofficiel</a></li>
+            <li><a href="contact.html">Questions fréquentes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> C'est Mon Dessert. Tous droits réservés. Préparé avec gourmandise.</p>
+        <div class="footer-legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

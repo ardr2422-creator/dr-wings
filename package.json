@@ -1,21 +1,21 @@
 {
-  "name": "dr-wings",
+  "name": "cest-mon-dessert",
   "version": "1.0.0",
-  "description": "Site vitrine premium — Dr Wings, la clinique du poulet à Franconville (95). Chicken wings, livraison Uber Eats. Site statique (HTML/CSS/JS), sans base de données.",
+  "description": "C'est Mon Dessert — site e-commerce de livraison de desserts (tiramisus, donuts, beignets XL, bubble tea) en Île-de-France. Statique (HTML/CSS/JS) + fonctions serverless, hébergé sur Vercel.",
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "start": "node server.js",
-    "autostart:install": "powershell -NoProfile -ExecutionPolicy RemoteSigned -File tools/install-autostart.ps1",
-    "autostart:uninstall": "powershell -NoProfile -ExecutionPolicy RemoteSigned -File tools/uninstall-autostart.ps1"
+    "start": "node server.js"
   },
   "keywords": [
-    "dr-wings",
-    "chicken-wings",
-    "restaurant",
-    "site-vitrine",
-    "franconville",
-    "uber-eats"
+    "cest-mon-dessert",
+    "dessert",
+    "tiramisu",
+    "donuts",
+    "bubble-tea",
+    "livraison",
+    "ile-de-france",
+    "e-commerce"
   ],
   "license": "UNLICENSED",
   "dependencies": {

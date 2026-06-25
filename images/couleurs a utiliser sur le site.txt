@@ -1,5 +1,3 @@
-noir : #010101, rgba(1, 1, 1), hsl(0, 0, 0)
-
-beige : #cfa264, rgba(207, 162, 100), hsl(35, 53, 60)
-
-blanc : #ffffff (le fond du site sera en blanc pour la visiblité sur logo)
+#FFD9DE
+#491E12
+#BE063A

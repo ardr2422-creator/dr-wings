@@ -1,180 +1,117 @@
-window.DRWINGS_LOCATIONS = [
+/* =====================================================================
+   C'EST MON DESSERT — Magasins du réseau (Île-de-France)
+   Source : pages Uber Eats du réseau. Horaires de soirée / nuit.
+   ===================================================================== */
+window.CMD_LOCATIONS = [
   {
-    id: "franconville",
-    ville: "Franconville",
-    code: "95",
-    dept: "Val-d'Oise",
-    region: "Île-de-France",
-    adresse: "23 Chaussée Jules César, 95130 Franconville",
-    note: "4,4",
-    avis: "700+ avis",
-    horaires: [["Tous les jours", "9h45 – 0h59"]],
-    commande: "https://www.ubereats.com/fr/store/dr-wings-franconville/v0p42CWaU-2kR9s5SoUDvw"
+    id: "saint-denis",
+    ville: "Saint-Denis",
+    code: "93",
+    dept: "Seine-Saint-Denis",
+    adresse: "11 Rue Gabriel Péri, 93200 Saint-Denis",
+    note: "4,1",
+    avis: "350+ avis",
+    horaires: [["Tous les jours", "20h15 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Saint-Denis"
   },
   {
-    id: "paris-10",
-    ville: "Paris 10ᵉ",
-    code: "75",
-    dept: "Paris",
-    region: "Île-de-France",
-    adresse: "49 Rue d'Enghien, 75010 Paris",
-    note: null,
-    avis: null,
-    horaires: null,
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Paris%2010"
-  },
-  {
-    id: "la-seyne",
-    ville: "La Seyne-sur-Mer",
-    code: "83",
-    dept: "Var",
-    region: "Provence-Alpes-Côte d'Azur",
-    adresse: "23 Cours Louis Blanc, 83500 La Seyne-sur-Mer",
-    note: "4,4",
-    avis: "500+ avis",
-    horaires: [
-      ["Mar. au dim.", "11h00 – 1h00"],
-      ["Lundi", "Fermé"]
-    ],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20La%20Seyne-sur-Mer"
-  },
-  {
-    id: "corbeil",
-    ville: "Corbeil-Essonnes",
+    id: "evry",
+    ville: "Évry-Courcouronnes",
     code: "91",
     dept: "Essonne",
-    region: "Île-de-France",
-    adresse: "3 Rue du 15 Juillet, 91100 Corbeil-Essonnes",
-    note: null,
-    avis: null,
-    horaires: [["Tous les jours", "11h00 – 22h45"]],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Corbeil-Essonnes"
-  },
-  {
-    id: "bordeaux-chartrons",
-    ville: "Bordeaux",
-    code: "33",
-    dept: "Gironde",
-    region: "Nouvelle-Aquitaine",
-    adresse: "4 Rue des Frères Portmann, 33300 Bordeaux",
-    note: "4,3",
-    avis: "800+ avis",
-    horaires: [
-      ["Dim. au ven.", "11h00 – 23h00"],
-      ["Samedi", "11h00 – 23h30"]
-    ],
-    commande: "https://www.ubereats.com/fr/store/dr-wings-bordeaux-chartrons/bbcpgSVOWPm8s-LtDvh50Q"
-  },
-  {
-    id: "dieppe",
-    ville: "Dieppe",
-    code: "76",
-    dept: "Seine-Maritime",
-    region: "Normandie",
-    adresse: "34 Rue de Boeuf, 76200 Dieppe",
-    note: "4,8",
-    avis: "24 avis",
-    horaires: [
-      ["Mar. au dim.", "11h00 – 15h00 · 16h00 – 23h00"],
-      ["Lundi", "Fermé"]
-    ],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Dieppe"
-  },
-  {
-    id: "nancy",
-    ville: "Nancy",
-    code: "54",
-    dept: "Meurthe-et-Moselle",
-    region: "Grand Est",
-    adresse: "38 Avenue du 20e Corps, 54000 Nancy",
-    note: "3,3",
-    avis: "13 avis",
-    horaires: [
-      ["Dimanche", "18h00 – 1h45"],
-      ["Mar. au jeu.", "18h00 – 23h59"],
-      ["Ven. et sam.", "18h00 – 1h45"],
-      ["Lundi", "Fermé"]
-    ],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Nancy"
-  },
-  {
-    id: "marseille",
-    ville: "Marseille",
-    code: "13",
-    dept: "Bouches-du-Rhône",
-    region: "Provence-Alpes-Côte d'Azur",
-    adresse: "86 Boulevard Baille, 13006 Marseille",
-    note: "4,0",
-    avis: "600+ avis",
-    horaires: [["Tous les jours", "11h30 – 22h00"]],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Marseille"
-  },
-  {
-    id: "le-mans",
-    ville: "Le Mans",
-    code: "72",
-    dept: "Sarthe",
-    region: "Pays de la Loire",
-    adresse: "127 Avenue de la Libération, 72000 Le Mans",
+    adresse: "10 Cours Monseigneur Romero, 91000 Évry-Courcouronnes",
     note: "4,7",
-    avis: "170+ avis",
-    horaires: null,
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Le%20Mans"
+    avis: "130+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Evry"
   },
   {
-    id: "calais",
-    ville: "Calais",
-    code: "62",
-    dept: "Pas-de-Calais",
-    region: "Hauts-de-France",
-    adresse: "143 Boulevard La Fayette, 62100 Calais",
-    note: "4,2",
-    avis: "160+ avis",
-    horaires: [["Tous les jours", "11h00 – 14h00 · 18h00 – 22h00"]],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Calais"
-  },
-  {
-    id: "saint-clement",
-    ville: "Saint-Clément",
-    code: "89",
-    dept: "Yonne",
-    region: "Bourgogne-Franche-Comté",
-    adresse: "5 Place de l'Église, 89100 Saint-Clément",
-    note: null,
-    avis: null,
-    horaires: null,
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Saint-Cl%C3%A9ment"
-  },
-  {
-    id: "merignac",
-    ville: "Mérignac",
-    code: "33",
-    dept: "Gironde",
-    region: "Nouvelle-Aquitaine",
-    adresse: "45 Avenue de la Marne, 33700 Mérignac",
+    id: "massy",
+    ville: "Massy",
+    code: "91",
+    dept: "Essonne",
+    adresse: "1 Place De France, 91300 Massy",
     note: "4,3",
-    avis: "440+ avis",
-    horaires: [
-      ["Dim. au jeu.", "11h00 – 14h30 · 18h00 – 23h00"],
-      ["Ven. et sam.", "11h00 – 14h30 · 18h00 – 23h30"]
-    ],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20M%C3%A9rignac"
+    avis: "73 avis",
+    horaires: [["Tous les jours", "20h30 – 4h15"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Massy"
   },
   {
-    id: "conflans",
-    ville: "Conflans-Sainte-Honorine",
-    code: "78",
-    dept: "Yvelines",
-    region: "Île-de-France",
-    adresse: "53 Avenue Carnot, 78700 Conflans-Sainte-Honorine",
-    note: "4,1",
-    avis: "600+ avis",
-    horaires: [
-      ["Dimanche", "11h30 – 5h00"],
-      ["Lun. au jeu.", "11h30 – 15h00 · 17h00 – 2h00"],
-      ["Vendredi", "17h00 – 5h00"],
-      ["Samedi", "11h30 – 5h00"]
-    ],
-    commande: "https://www.ubereats.com/fr/search?q=Dr%20Wings%20Conflans-Sainte-Honorine"
+    id: "courbevoie",
+    ville: "Courbevoie",
+    code: "92",
+    dept: "Hauts-de-Seine",
+    adresse: "12 Rue De Rouen, 92400 Courbevoie",
+    note: "3,8",
+    avis: "360+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Courbevoie"
+  },
+  {
+    id: "bondy",
+    ville: "Bondy",
+    code: "93",
+    dept: "Seine-Saint-Denis",
+    adresse: "43 Rue Jules Guesde, 93140 Bondy",
+    note: "3,9",
+    avis: null,
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Bondy"
+  },
+  {
+    id: "saint-maur",
+    ville: "Saint-Maur-des-Fossés",
+    code: "94",
+    dept: "Val-de-Marne",
+    adresse: "50 Avenue De Bonneuil, 94210 Saint-Maur-des-Fossés",
+    note: "4,2",
+    avis: "170+ avis",
+    horaires: [["Tous les jours", "20h30 – 16h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Saint-Maur"
+  },
+  {
+    id: "argenteuil",
+    ville: "Argenteuil",
+    code: "95",
+    dept: "Val-d'Oise",
+    adresse: "82 Avenue Gabriel Péri, 95100 Argenteuil",
+    note: "4,0",
+    avis: "130+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    carteNote: "Cette adresse propose les tiramisus bowls et les bubble tea.",
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Argenteuil"
+  },
+  {
+    id: "montmagny",
+    ville: "Montmagny",
+    code: "95",
+    dept: "Val-d'Oise",
+    adresse: "Place De La Division Leclerc, 95360 Montmagny",
+    note: "4,0",
+    avis: "110+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Montmagny"
+  },
+  {
+    id: "paris-15",
+    ville: "Paris 15ᵉ",
+    code: "75",
+    dept: "Paris",
+    adresse: "4 Rue Desaix, 75015 Paris",
+    note: "4,0",
+    avis: "220+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Paris%2015"
+  },
+  {
+    id: "chessy",
+    ville: "Chessy",
+    code: "77",
+    dept: "Seine-et-Marne",
+    adresse: "45 Rue D'Ariane, 77700 Chessy",
+    note: "4,3",
+    avis: "220+ avis",
+    horaires: [["Tous les jours", "20h30 – 4h30"]],
+    commande: "https://www.ubereats.com/fr/search?q=C'est%20Mon%20Dessert%20Chessy"
   }
 ];
